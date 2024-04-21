@@ -34,8 +34,8 @@ _comp_options+=(globaldots);
 source $ZSH/oh-my-zsh.sh
 
 # aliases
-source $ZSH/aliases.sh
-source $ZSH/mount_aliases.sh
+source $HOME/.config/aliases/command_aliases.sh
+source $HOME/.config/aliases/mount_aliases.sh
 
 # Exports:
 # Manpage locatio
@@ -150,7 +150,7 @@ _fzf_compgen_dir() {
   fd --type=d --hidden --exclude .git . "$1"
 }
 
-source $HOME/Downloads/installs/fzf-git.sh/fzf-git.sh
+source $HOME/.local/share/fzf-git.sh/fzf-git.sh
 
 # Advanced customization of fzf options via _fzf_comprun function
 # - The first argument to the function is the name of the command.
