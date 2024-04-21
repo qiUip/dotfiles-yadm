@@ -1,1 +1,0 @@
-command_aliases.sh##distro.openSUSE
