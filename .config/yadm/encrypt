@@ -1,3 +1,5 @@
 .oh-my-zsh/mount_aliases.sh
 .config/msmtp/config
 .mbsyncrc
+.config/mutt/accounts
+.config/mutt/signatures
