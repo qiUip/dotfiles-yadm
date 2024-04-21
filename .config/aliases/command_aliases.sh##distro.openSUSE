@@ -31,3 +31,5 @@ alias xclip="xclip -selection c"
 alias c="clear"
 # batgrep
 alias bgr="batgrep"
+
+source $HOME/.config/aliases/mount_aliases.sh

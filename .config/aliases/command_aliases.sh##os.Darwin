@@ -6,7 +6,6 @@ else
 fi
 
 bindkey -s '^[3]' \#
-
 # emacs
 alias e="emacsclient -t"
 # zsh
@@ -23,5 +22,7 @@ alias lla="ls -la"
 alias lt="ls --tree"
 alias lss="l -S --total-size"
 alias lst="l -t --total-size"
-
+# clear
 alias c="clear"
+# batgrep
+alias bgr="batgrep"
