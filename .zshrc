@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/home/mashy/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -32,6 +32,8 @@ autoload -U compinit && compinit
 _comp_options+=(globaldots);
 
 source $ZSH/oh-my-zsh.sh
+
+# aliases
 source $ZSH/aliases.sh
 source $ZSH/mount_aliases.sh
 
@@ -46,11 +48,11 @@ export BROWSER='/usr/bin/firefox'
 export PATH=/usr/sbin:$PATH
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH/usr/lib64:/usr/lib64/mpi/gcc/openmpi4/lib64
 # Local binraries
-export PATH=$PATH:/home/mashy/.local/bin
+export PATH=$PATH:$HOME/.local/bin
 # Doom emacs
-export PATH=$PATH:/home/mashy/.config/emacs/bin
+export PATH=$PATH:$HOME/.config/emacs/bin
 # Rust / cargo binraries
-export PATH=$PATH:/home/mashy/.cargo/bin
+export PATH=$PATH:$HOME/.cargo/bin
 # Paraview
 export PARAVIEW=/opt/ParaView-5.9.0-RC4-osmesa-MPI-Linux-Python3.8-64bit
 export PYTHONPATH=/opt/ParaView-5.9.0-RC4-osmesa-MPI-Linux-Python3.8-64bit/lib/python3.8/site-packages
@@ -148,7 +150,7 @@ _fzf_compgen_dir() {
   fd --type=d --hidden --exclude .git . "$1"
 }
 
-source /home/mashy/Downloads/installs/fzf-git.sh/fzf-git.sh
+source $HOME/Downloads/installs/fzf-git.sh/fzf-git.sh
 
 # Advanced customization of fzf options via _fzf_comprun function
 # - The first argument to the function is the name of the command.
