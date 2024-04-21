@@ -1,0 +1,2 @@
+# Paths macOS
+export PATH="$PATH:/opt/homebrew/bin"

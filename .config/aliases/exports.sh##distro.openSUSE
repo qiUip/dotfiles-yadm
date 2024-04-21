@@ -1,0 +1,20 @@
+# Paths openSUSE
+export PATH="/usr/sbin:$PATH"
+# Manpage locatio
+export MANPATH="/usr/local/man:$MANPATH"
+# Preferred editor
+export EDITOR='emacs'
+# Preferred browser
+export BROWSER='/usr/bin/firefox'
+# Library
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH/usr/lib64:/usr/lib64/mpi/gcc/openmpi4/lib64
+# Paraview
+export PARAVIEW=/opt/ParaView-5.9.0-RC4-osmesa-MPI-Linux-Python3.8-64bit
+export PYTHONPATH=/opt/ParaView-5.9.0-RC4-osmesa-MPI-Linux-Python3.8-64bit/lib/python3.8/site-packages
+# Nvidia-hpc-sdk
+export NVARCH=`uname -s`_`uname -m`
+export NVCOMPILERS=/opt/nvidia/hpc_sdk
+export MANPATH=$MANPATH:$NVCOMPILERS/$NVARCH/23.5/compilers/man
+export PATH=$PATH:$NVCOMPILERS/$NVARCH/23.5/compilers/bin
+export PATH=$PATH:$NVCOMPILERS/$NVARCH/23.5/comm_libs/mpi/bin
+export MANPATH=$MANPATH:$NVCOMPILERS/$NVARCH/23.5/comm_libs/mpi/man

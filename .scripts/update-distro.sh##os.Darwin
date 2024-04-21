@@ -1,0 +1,8 @@
+# Function for distribution updates
+function update-distro() {
+    SESSION=UPDATE
+    UPDATE_CMD="brew upgrade"
+    tmux new-session -d -s $SESSION
+    tmux send-keys "$UPDATE_CMD" C-m
+    tmux attach-session -t $SESSION
+}

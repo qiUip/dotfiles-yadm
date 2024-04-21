@@ -1,0 +1,59 @@
+# Functions for identifying distribution
+function on-classic-linux() {
+    if [[ -f "/etc/os-release" ]] ; then
+        if [[ `cat /etc/os-release | grep \^NAME` == *"$1"* ]] ; then
+            return 0
+        else
+            return 1
+        fi
+    else
+        echo "/etc/os-release not found. This is not classic GNU/Linux."
+        return 1
+    fi
+}
+function on-tumbleweed() {
+    on-classic-linux "openSUSE Tumbleweed"
+}
+function on-leap() {
+    on-classic-linux "openSUSE Leap"
+}
+function on-manjaro() {
+    on-classic-linux "Manjaro Linux"
+}
+function on-fedora() {
+    on-classic-linux "Fedora"
+}
+function on-debian() {
+    on-classic-linux "Debian GNU/Linux"
+}
+# Function for distribution updates
+function update-distro() {
+    OPTION=$1
+    SESSION=UPDATE
+    if on-classic-linux ; then
+        if on-tumbleweed ; then
+            if [[ $OPTION == "fast" ]] ; then
+                UPDATE_CMD="sudo zypper dup --allow-vendor-change"
+            else
+                UPDATE_CMD="sudo zypper refresh && sudo zypper dup --allow-vendor-change"
+            fi
+        elif on-leap ; then
+            UPDATE_CMD="sudo zypper up"
+        elif on-manjaro ; then
+            UPDATE_CMD="sudo pacman -Syyuu"
+        elif on-fedora ; then
+            if [[ $OPTION == "fast" ]] ; then
+                UPDATE_CMD="sudo dnf upgrade"
+            else
+                UPDATE_CMD="sudo dnf upgrade --refresh"
+            fi
+        elif on-debian ; then
+            UPDATE_CMD="sudo apt update && sudo apt upgrade"
+        else
+            echo -e "\n\tCommand not set for the distribution in use.\n"
+        fi
+    fi
+    tmux new-session -d -s $SESSION
+    tmux send-keys "$UPDATE_CMD" C-m
+    tmux attach-session -t $SESSION
+}
