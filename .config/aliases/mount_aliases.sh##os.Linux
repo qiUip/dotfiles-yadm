@@ -1,7 +1,0 @@
-# DS mounts
-alias mount_DS="_ mount -t nfs -o rw 192.168.1.55:/volume1/homes /mnt/DS"
-alias mount_LC="_ mount -t nfs -o rw 192.168.1.55:/volumeUSB2/usbshare2-2 /mnt/LaCie"
-alias mount_XT="_ mount -t nfs -o rw 192.168.1.55:/volumeUSB1/usbshare1-2 /mnt/Ext"
-alias umount_DS="_ umount /mnt/DS"
-alias umount_LC="_ umount /mnt/LaCie"
-alias umount_XT="_ umount /mnt/Ext"
