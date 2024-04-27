@@ -1,4 +1,4 @@
-.oh-my-zsh/mount_aliases.sh
+.config/aliases/mount_aliases.sh
 .config/msmtp/config
 .mbsyncrc
 .config/mutt/accounts
