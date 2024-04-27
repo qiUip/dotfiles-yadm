@@ -1,0 +1,35 @@
+[pyprland]
+plugins = [
+  "scratchpads",
+  "magnify",
+  "expose",
+  "shift_monitors",
+  "workspaces_follow_focus",
+]
+
+[workspaces_follow_focus]
+max_workspaces = 8
+
+[expose]
+include_special = false
+
+[scratchpads.term]
+animation = "fromTop"
+command = "kitty --class kitty-dropterm"
+class = "kitty-dropterm"
+size = "75% 60%"
+
+[scratchpads.volume]
+animation = "fromRight"
+command = "pavucontrol"
+class = "pavucontrol"
+lazy = true
+size = "40% 90%"
+unfocus = "hide"
+
+[scratchpads.spotify]
+animation = "fromLeft"
+command = "kitty --class kitty-dropterm -e spotify_player"
+class = "kitty-dropterm"
+lazy = true
+size = "20% 90%"
