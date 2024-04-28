@@ -25,7 +25,8 @@ source $HOME/.scripts/fzf_bat.sh
 source $HOME/.scripts/update-distro.sh
 
 # Exports:
-export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/.cargo/bin"
-export PATH="$PATH:$HOME/.config/emacs/bin"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.cabal/bin:$PATH"
+export PATH="$HOME/.config/emacs/bin:$PATH"
 source $HOME/.config/aliases/exports.sh
